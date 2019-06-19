@@ -1,0 +1,1 @@
+This directory is about hello_world project
