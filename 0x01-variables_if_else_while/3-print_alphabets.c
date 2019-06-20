@@ -17,6 +17,15 @@ int main(void)
 		n++;
 	}
 
+	n = 65;
+
+	while (n < 90)
+	{
+		putchar(n);
+
+		n++;
+	}
+
 	putchar(10);
 
 	return (0);
