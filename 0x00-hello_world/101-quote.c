@@ -7,12 +7,10 @@
  */
 int main(void)
 {
-	char str[] = {"and that piece of art is useful\" - Dora Korpar, 2015-10-19\n"};
+  
+	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-        for (int i = 0; i < 60; i++)
-	{
-	        putchar(stderr, text[i]);
-	}
+	write(2, pha, 59);
 
 	return (1);
 }
