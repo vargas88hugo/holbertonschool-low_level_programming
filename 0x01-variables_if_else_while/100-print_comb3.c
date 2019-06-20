@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	int n = 48, c = 48, m;
+	int n = 48, m;
 
 	while (n <= 57)
 	{
@@ -16,7 +16,7 @@ int main(void)
 		while (m <= 57)
 		{
 
-			if (m > c && m != n)
+			if (m > n && m != n)
 			{
 				putchar(n);
 
@@ -34,8 +34,6 @@ int main(void)
 		}
 
 		n++;
-
-		c++;
 	}
 
 	putchar(10);
