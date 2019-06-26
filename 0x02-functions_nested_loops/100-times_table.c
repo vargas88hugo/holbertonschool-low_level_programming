@@ -15,22 +15,36 @@ void print_times_table(int n)
 	{
 		for (i = 0; i <= n; i++)
 		{
-			for (j = 0; j <= n; j++)
+			_putchar('0');
+			for (j = 1; j <= n; j++)
 			{
 				x = i * j;
-
-				if (j == 0)
-					printf("%d", x);
-				else if (x <= 9 && j != 0)
-					printf(",   %d", x);
+				if (x <= 9)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar('0' + x);
+				}
 				else if (x <= 99)
-					printf(",  %d", x);
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(((x / 10) % 10) + '0');
+					_putchar((x % 10) + '0');
+				}
 				else
-					printf(", %d", x);
-
-				if (j == n)
-					putchar(10);
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(((x / 100) % 10) + '0');
+					_putchar(((x / 10) % 10) + '0');
+					_putchar((x % 10) + '0');
+				}
 			}
+			_putchar(10);
 		}
 	}
 }
