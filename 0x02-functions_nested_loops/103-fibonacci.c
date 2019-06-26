@@ -7,7 +7,6 @@
  */
 int main(void)
 {
-	int i;
 	long int a = 1, b = 2, c = 0, sum = 0;
 
 	while (c <= 4000000)
@@ -16,9 +15,9 @@ int main(void)
 		a = b;
 		b = c;
 
-		if (c <= 4000000 && c % 2 == 0)
+		if (a % 2 == 0)
 		{
-			sum += c;
+			sum += a;
 		}
 	}
 	printf("%ld\n", sum);
