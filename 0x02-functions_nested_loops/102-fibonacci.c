@@ -7,7 +7,8 @@
  */
 int main(void)
 {
-	int i, a = 1, b = 2, c;
+	int i;
+	long int a = 1, b = 2, c;
 
 	for (i = 1; i <= 50; i++)
 	{
@@ -21,7 +22,7 @@ int main(void)
 			a = b;
 			b = c;
 		}
-		printf("%d", c);
+		printf("%ld", c);
 		if (i < 50)
 		{
 			printf(", ");
