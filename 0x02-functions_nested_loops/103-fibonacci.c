@@ -14,7 +14,7 @@ int main(void)
 
 	printf("1, 2");
 
-        while (c <= 4000000)
+	while (c <= 4000000)
 	{
 		if (c < 3)
 		{
