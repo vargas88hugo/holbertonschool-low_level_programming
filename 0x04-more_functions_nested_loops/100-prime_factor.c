@@ -6,31 +6,31 @@
  */
 int main(void)
 {
-	long int n, i, j, tmp, m;
+	long int n, i, j, m;
 
 	n = 612852475143;
 
 	for (i = 3; i < n; i++)
 	{
-		for (j = 2; j < i; j++)
+	        if (n % i == 0)
 		{
-			if (i % j == 0)
+			for (j = 3; j < i; j++)
 			{
-				tmp = 0;
-				break;
+				if (i % j == 0)
+				{
+					break;
+				}
 			}
-			else
+
+			if (j == i)
 			{
-				tmp = 1;
+				m = i;
 			}
-		}
-		if (tmp == 1)
-		{
-			m = i;
 		}
 	}
 
 	printf("%ld\n", m);
+
 
 	return (0);
 }
