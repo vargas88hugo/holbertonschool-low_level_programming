@@ -6,7 +6,7 @@
  */
 void print_number(int n)
 {
-	unsigned int i, j, k, x;
+	unsigned int i, j, k;
 
 	if (n < 0)
 	{
@@ -30,14 +30,12 @@ void print_number(int n)
 	while (j != 0)
 	{
 		j /= 10;
-		k++;
-		x *= 10;
+		k *= 10;
 	}
 
-	while (k > 0)
+	while (k >= |)
 	{
-		k--;
-		x /= 10;
+		k /= 10;
 		_putchar(((i / x) % 10) + '0');
 	}
 }
