@@ -6,38 +6,38 @@
  */
 void print_number(int n)
 {
-	unsigned int i;
+	unsigned int i, j, k, x;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		i = n * -1;
 	}
+	else if (n == 0)
+	{
+		_putchar('0');
+		i = 0;
+	}
 	else
 	{
 		i = n;
 	}
 
-	if (i <= 9)
+	j = i;
+	k = 0;
+	x = 1;
+
+        while (j != 0)
 	{
-		_putchar(i + '0');
+		j /= 10;
+		k++;
+		x *= 10;
 	}
-	else if (i >= 10 && i <= 99)
+
+	while (k > 0)
 	{
-		_putchar((i / 10) + '0');
-		_putchar((i % 10) + '0');
-	}
-	else if (i >= 100 && i <= 999)
-	{
-		_putchar((i / 100) + '0');
-		_putchar(((i / 10) % 10) + '0');
-		_putchar((i % 10) + '0');
-	}
-	else if (i >= 1000 && i <= 9999)
-	{
-		_putchar((i / 1000) + '0');
-		_putchar(((i / 100) % 10) + '0');
-		_putchar(((i / 10) % 10) + '0');
-		_putchar((i % 10) + '0');
+		x /= 10;
+		_putchar(((i / x) % 10) + '0');
+		k--;
 	}
 }
