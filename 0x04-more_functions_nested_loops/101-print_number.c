@@ -27,7 +27,7 @@ void print_number(int n)
 	k = 0;
 	x = 1;
 
-        while (j != 0)
+	while (j != 0)
 	{
 		j /= 10;
 		k++;
