@@ -15,8 +15,8 @@ void print_number(int n)
 	}
 	else if (n == 0)
 	{
+		i = n;
 		_putchar('0');
-		i = 0;
 	}
 	else
 	{
@@ -36,8 +36,8 @@ void print_number(int n)
 
 	while (k > 0)
 	{
+		k--;
 		x /= 10;
 		_putchar(((i / x) % 10) + '0');
-		k--;
 	}
 }
