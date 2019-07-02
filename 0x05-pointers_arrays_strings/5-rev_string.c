@@ -18,9 +18,6 @@ void rev_string(char *s)
 	}
 
 	for (i = 0; i < len; i++)
-		*(a + i) = 0;
-
-	for (i = 0; i < len; i++)
 		*(a + i) = *(s + (len - 1 - i));
 
 	for (i = 0; i < len; i++)
