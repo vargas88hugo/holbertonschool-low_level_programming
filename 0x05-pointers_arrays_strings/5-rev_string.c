@@ -24,7 +24,7 @@ void rev_string(char *s)
 		c[i] = 0;
 
 	for (i = 0; i < len; i++)
-		c[i] = *(s + 8 - i);
+		c[i] = *(s + len - i);
 
 	c[len + 1] = '\0';
 
