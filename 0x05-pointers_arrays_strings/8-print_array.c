@@ -12,9 +12,8 @@ void print_array(int *a, int n)
 
 	for (i = 0; i <= l; i++)
 	{
-		if (i != l)
-			printf("%d, ", a[i]);
-		else
-			printf("%d\n", a[i]);
+		printf("%d", a[i]);
+		if (i < l)
+			printf(", ");
 	}
 }
