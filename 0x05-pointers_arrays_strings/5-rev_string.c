@@ -7,6 +7,7 @@
 void rev_string(char *s)
 {
 	int i, len = 0;
+	char *a;
 
 	while (1)
 	{
@@ -14,20 +15,15 @@ void rev_string(char *s)
 			break;
 
 		len++;
-
 	}
 
-	char c[len + 1];
-
-
-	for (i = 0; i < len; i++)
-		c[i] = 0;
+	a = s;
 
 	for (i = 0; i < len; i++)
-		c[i] = *(s + len - i);
-
-	c[len + 1] = '\0';
+	{
+		*(a + i) = *(s + len - 1 - i);
+	}
 
 	for (i = 0; i < len; i++)
-		*(s + i) = c[i];
+		*(s + i) = *(a + i);
 }
