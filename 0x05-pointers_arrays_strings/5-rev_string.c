@@ -17,17 +17,17 @@ void rev_string(char *s)
 
 	}
 
-	char c[len];
+	char c[len + 1];
 
 
-	for (i = 0; i <= len; i++)
+	for (i = 0; i < len; i++)
 		c[i] = 0;
 
 	for (i = 0; i < len; i++)
 		c[i] = *(s + 8 - i);
 
-	c[10] = '\0';
+	c[len + 1] = '\0';
 
-	for (i = 0; i <= len; i++)
+	for (i = 0; i < len; i++)
 		*(s + i) = c[i];
 }
