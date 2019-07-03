@@ -7,9 +7,14 @@
  */
 int _atoi(char *s)
 {
-	int i, j, n = 0, count = 0, m = 0;
+	int i, j, n = 0, count = 0, c1 = 0, m = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
+	{
+		c1++;
+	}
+
+	for (i = 0; i < c1; i++)
 	{
 		if (s[i] >= '0' && s[i] <= '9')
 		{
@@ -25,6 +30,15 @@ int _atoi(char *s)
 			if (s[i + 1] < '0' || s[i + 1] > '9')
 				break;
 		}
+	}
+
+	for (i = 0; i < c1; i++)
+	{
+		if (s[i] >= '0' && s[i] <= '9')
+			break;
+
+		if (i == c1 - 1)
+			n = 0;
 	}
 
 	if (count % 2 == 0)
