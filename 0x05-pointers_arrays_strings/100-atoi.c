@@ -27,7 +27,7 @@ int _atoi(char *s)
 		}
 	}
 
-	if (count % 2 == 0)
+	if (count % 2 == 0 && m != 0)
 		return (n);
 	else if (m == 0)
 		return (0);
