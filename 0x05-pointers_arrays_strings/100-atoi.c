@@ -11,11 +11,6 @@ int _atoi(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		c1++;
-	}
-
-	for (i = 0; i < c1; i++)
-	{
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			m++;
@@ -32,17 +27,10 @@ int _atoi(char *s)
 		}
 	}
 
-	for (i = 0; i < c1; i++)
-	{
-		if (s[i] >= '0' && s[i] <= '9')
-			break;
-
-		if (i == c1 - 1)
-			n = 0;
-	}
-
 	if (count % 2 == 0)
 		return (n);
+	else if (m == 0)
+		return (0);
 	else
 		return (-n);
 }
