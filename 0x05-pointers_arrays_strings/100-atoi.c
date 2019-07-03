@@ -27,10 +27,10 @@ int _atoi(char *s)
 		}
 	}
 
-	if (count % 2 == 0 && m != 0)
-		return (n);
-	else if (m == 0)
+	if (m == 0 || s[0] == '\0')
 		return (0);
+	else if (count % 2 == 0 && m != 0)
+		return (n);
 	else
 		return (-n);
 }
