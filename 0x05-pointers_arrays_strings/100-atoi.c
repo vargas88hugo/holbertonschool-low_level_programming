@@ -14,7 +14,7 @@ int _atoi(char *s)
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			m++;
-			for (j = i; j >= 0; j--)
+			for (j = 0; j <= i; j++)
 			{
 				if (s[j] == '-' && m == 1)
 					count++;
