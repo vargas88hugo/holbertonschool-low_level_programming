@@ -9,10 +9,12 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i, j = 0, b = 0;
+	int i, j = 0, b;
 
-	while (*(dest + j) != '\0')
+	while (1)
 	{
+		if (*(src + j) == '\0')
+			break;
 		j++;
 	}
 
@@ -25,10 +27,12 @@ char *_strncpy(char *dest, char *src, int n)
 		j = n;
 	}
 
-	for (i = 0; i < j; i++, b++)
+	for (i = 0,  b = 0; i < j; i++, b++)
 	{
 		*(dest + i) = *(src + b);
 	}
+
+	*(dest + i) = '\0';
 
 	return (dest);
 }
