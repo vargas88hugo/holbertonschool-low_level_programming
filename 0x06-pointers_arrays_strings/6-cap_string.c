@@ -17,10 +17,10 @@ char *cap_string(char *c)
 			if ((c[i] == a[j]) && c[i + 1] >= 'a' && c[i + 1] <= 'z')
 				c[i + 1] -= 32;
 
-			if (c[i] >= 'a' && c[i] <= 'z' && i == 0)
-				c[i + 1] -= 32;
+			if (c[0] >= 'a' && c[0] <= 'z')
+				c[0] -= 32;
 		}
 	}
 
-	return (c);
+return (c);
 }
