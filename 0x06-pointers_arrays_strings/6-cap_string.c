@@ -11,6 +11,12 @@ char *cap_string(char *c)
 
 	for (i = 0; c[i] != '\0'; i++)
 	{
+		if (c[i] >= 'a' && c[i] <= 'z')
+			c[i] -= 32;
+	}
+
+	for (i = 0; c[i] != '\0'; i++)
+	{
 		if (c[i] == ' ' || c[i] == '\t' || c[i] == '\n' || c[i] == ',')
 		{
 			if (c[i + 1] >= 'a' && c[i + 1] <= 'z')
