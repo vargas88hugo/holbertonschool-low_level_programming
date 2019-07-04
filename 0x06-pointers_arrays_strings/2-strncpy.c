@@ -9,7 +9,7 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i, j = 0, a = 0, b;
+	int i, j = 0, a = 0, c = 0;
 
 	while (1)
 	{
@@ -26,21 +26,18 @@ char *_strncpy(char *dest, char *src, int n)
 	}
 
 	if (n >= j)
-	{
-		;
-	}
+		c++;
 	else
-	{
 		j = n;
-	}
 
-	for (i = 0,  b = 0; i < j; i++, b++)
+	for (i = 0; i < j; i++)
+		*(dest + i) = *(src + i);
+
+	if (c > 0)
 	{
-		*(dest + i) = *(src + b);
+	        for (; *(dest + i) != 0; i++)
+			*(dest + i) = '\0';
 	}
-
-        for (; i < a; i++)
-		*(dest + i) = '\0';
 
 	return (dest);
 }
