@@ -31,14 +31,7 @@ char *_strncat(char *dest, char *src, int n)
 	}
 	else
 	{
-		j = 0;
-		while (1)
-		{
-			if (j == n)
-				break;
-
-			j++;
-		}
+		j = n;
 	}
 	for (a = i; a < i + j; a++)
 	{
