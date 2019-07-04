@@ -35,7 +35,7 @@ char *_strncpy(char *dest, char *src, int n)
 
 	if (c > 0)
 	{
-	        for (; *(dest + i) != 0; i++)
+		for (; *(dest + i) != 0; i++)
 			*(dest + i) = '\0';
 	}
 
