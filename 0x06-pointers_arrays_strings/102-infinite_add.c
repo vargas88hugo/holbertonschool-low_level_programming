@@ -38,14 +38,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	r[z] = '\0';
 
-	if (z == x)
-	{
-		for (k = 1; k < z; k++)
-		{
-			r[k - 1] = r[k];
-		}
-	}
-
 	r = (z >= size_r) ? 0 : r;
 	return (r);
 }
