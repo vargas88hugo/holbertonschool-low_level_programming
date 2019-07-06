@@ -11,7 +11,7 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i, j, x, y, z, sum, add;
+	int i, j, x, y, z, sum, add, k;
 	char *a, *b;
 
 	for (i = 0; n1[i] != '\0'; i++)
@@ -29,21 +29,23 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 		if (sum <= 9)
 		{
-			add = 0;
-			r[x + 1] = sum + 48;
+			add = 0, r[x + 1] = sum + 48;
 		}
 		else
 		{
-			add = sum;
-			sum %= 10;
-			add /= 10;
-			r[x + 1] = sum + 48;
+			add = sum, sum %= 10, add /= 10, r[x + 1] = sum + 48;
 		}
-		/*printf("| %d %d | %c %c | %d %d |\n", x, y, a[x], b[y], add, sum);*/
 	}
 	r[z] = '\0';
-	if (z >= size_r)
-		return (0);
 
+	if (z == x)
+	{
+		for (k = 1; k < z; k++)
+		{
+			r[k - 1] = r[k];
+		}
+	}
+
+	r = (z >= size_r) ? 0 : r;
 	return (r);
 }
