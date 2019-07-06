@@ -36,8 +36,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			add = sum, sum %= 10, add /= 10, r[x + 1] = sum + 48;
 		}
 	}
-	r[z] = '\0';
 
+	(z == i) ? (r[z + 1] = '\0', r = r + 1) : (r[z] = '\0', r = r);
 	r = (z >= size_r) ? 0 : r;
 	return (r);
 }
