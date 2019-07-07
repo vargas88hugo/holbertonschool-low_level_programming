@@ -39,9 +39,8 @@ void print_buffer(char *b, int size)
 				b[k] = (b[k] >= 0 && b[k] <= 31) ? ('.') : (b[k]);
 
 				printf("%c", b[k]);
-
-				(k == i + 9 || k == size - 1) ? printf("\n") : k;
 			}
+			printf("\n");
 		}
 	}
 }
