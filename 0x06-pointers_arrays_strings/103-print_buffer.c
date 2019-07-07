@@ -8,7 +8,7 @@
  */
 void print_buffer(char *b, int size)
 {
-	int i, j, k;
+	int i, j, k, l;
 
 	for (i = 0; i < size; i += 10)
 	{
@@ -16,15 +16,20 @@ void print_buffer(char *b, int size)
 
 		for (j = i; j < i + 10; j += 2)
 		{
-			printf("%.2x%.2x ", b[j], b[j + 1]);
-			if (j >= size - 2)
+			if (b[j] == '\0' && (i + 10) >= size)
+			{
+				for (l = j; l <= i + 10; l++)
+					printf("  ");
 				break;
+			}
+			else
+				printf("%.2x%.2x ", b[j], b[j + 1]);
 		}
 		for (k = i; k < i + 10; k++)
 		{
 			b[k] = (b[k] >= 0 && b[k] <= 31) ? ('.') : (b[k]);
 
-			(k == size - 6) ? printf("%11c", b[k]) : printf("%c", b[k]);
+			printf("%c", b[k]);
 
 			(k == i + 9 || k == size - 1) ? printf("\n") : k;
 
