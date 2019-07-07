@@ -8,34 +8,39 @@
  */
 void print_buffer(char *b, int size)
 {
-	int i, j, k, l;
+	int i, j, k;
 
-	for (i = 0; i < size; i += 10)
+	if (size <= 0)
+		printf("\n");
+	else
 	{
-		printf("%.8x ", i);
-
-		for (j = i; j < i + 10; j += 2)
+		for (i = 0; i < size; i += 10)
 		{
-			if (b[j] == '\0' && (i + 10) >= size)
+			printf("%.8x ", i);
+
+			for (j = i; j < i + 10; j++)
 			{
-				for (l = j; l <= i + 10; l++)
+				if (j % 2 == 0)
+					printf(" ");
+
+				if (j < size)
+					printf("%.2x", b[j]);
+				else
 					printf("  ");
-				break;
 			}
-			else
-				printf("%.2x%.2x ", b[j], b[j + 1]);
-		}
-		for (k = i; k < i + 10; k++)
-		{
-			b[k] = (b[k] >= 0 && b[k] <= 31) ? ('.') : (b[k]);
-
-			printf("%c", b[k]);
-
-			(k == i + 9 || k == size - 1) ? printf("\n") : k;
-
-			if (k >= size - 1)
+			printf(" ");
+			for (k = i; k < i + 10; k++)
 			{
-				break;
+				if (k >= size)
+				{
+					break;
+				}
+
+				b[k] = (b[k] >= 0 && b[k] <= 31) ? ('.') : (b[k]);
+
+				printf("%c", b[k]);
+
+				(k == i + 9 || k == size - 1) ? printf("\n") : k;
 			}
 		}
 	}
