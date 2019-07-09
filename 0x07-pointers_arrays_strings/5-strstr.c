@@ -18,11 +18,11 @@ char *_strstr(char *haystack, char *needle)
 			for (j = 0; *(needle + j); j++, i++)
 			{
 				if (*(haystack + i) != *(needle + j))
-					return (0);
+					return ('\0');
 			}
 			return (haystack + k);
 		}
 	}
 
-	return (haystack);
+	return (0);
 }
