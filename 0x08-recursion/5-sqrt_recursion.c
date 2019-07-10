@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * _pow_recursion - Function that find power number for square root
+ * @a: base of the power
+ * @b: exponation of the power
+ * Return: Power of the number
+ */
 int _pow_recursion(int a, int b)
 {
 	if (b % (a / b) == 0)
@@ -14,7 +20,7 @@ int _pow_recursion(int a, int b)
 }
 
 /**
- * _sqtr_recursion - Function that returns the natural square root of a number
+ * _sqrt_recursion - Function that returns the natural square root of a number
  * @n: Number to be valued
  * Return: The natural square
  */
