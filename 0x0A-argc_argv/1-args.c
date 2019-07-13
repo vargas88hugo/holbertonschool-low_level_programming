@@ -4,7 +4,7 @@
 /**
  * main - Entry Point
  * @argc: Number of arguments passed
- * @__attribute__: unused
+ * @argv: unused
  * Return: Always 0 (Success)
  */
 int main(int argc, char *argv[]__attribute__((unused)))
