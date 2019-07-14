@@ -11,11 +11,9 @@
  */
 int main(int argc, char *argv[])
 {
-	unsigned int i, j, k = 0, count;
+	int i, j, k = 0;
 
-	count = argc;
-
-	for (i = 1; i < count; i++)
+	for (i = 1; i < argc; i++)
 	{
 
 		for (j = 0; argv[i][j] != '\0'; j++)
@@ -30,7 +28,7 @@ int main(int argc, char *argv[])
 		k += atoi(argv[i]);
 	}
 
-	printf("%u\n", k);
+	printf("%d\n", k);
 
 	return (0);
 }
