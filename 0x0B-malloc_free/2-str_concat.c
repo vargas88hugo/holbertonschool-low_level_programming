@@ -1,0 +1,35 @@
+#include "holberton.h"
+#include <stdlib.h>
+
+/**
+ * str_concat - Function that concatenates two strings
+ * @s1: String one
+ * @s2: String two
+ * Return: Return a concatenate string
+ */
+char *str_concat(char *s1, char *s2)
+{
+	unsigned int i, j, x, y, z;
+	char *p;
+
+	for (i = 0; s1[i] != '\0'; i++)
+		;
+
+	for (j = 0; s2[j] != '\0'; j++)
+		;
+
+	p = malloc(i + j + 1 + sizeof(char));
+
+	if (p == NULL)
+		return (NULL);
+
+	for (x = 0; x < i; x++)
+		p[x] = s1[x];
+
+	for (y = i, z = 0; y < i + j; y++, z++)
+		p[y] = s2[z];
+
+	p[y] = '\0';
+
+	return (p);
+}
