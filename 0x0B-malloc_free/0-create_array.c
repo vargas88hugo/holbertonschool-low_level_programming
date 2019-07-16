@@ -4,7 +4,7 @@
 /**
  * create_array - Function that creates an array of chars with malloc
  * @size: Size of array
- * @ c: character of buffer
+ * @c: character of buffer
  * Return: An array of char
  */
 char *create_array(unsigned int size, char c)
@@ -19,6 +19,8 @@ char *create_array(unsigned int size, char c)
 
 	for (i = 0; i < size; i++)
 		s[i] = c;
+	if (s == '\0')
+		return ('\0');
 
 	return (s);
 }
