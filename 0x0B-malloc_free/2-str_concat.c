@@ -32,8 +32,10 @@ char *str_concat(char *s1, char *s2)
 	for (x = 0; x < i; x++)
 		p[x] = s1[x];
 
-	for (y = i, z = 0; y < i + j + 1; y++, z++)
+	for (y = i, z = 0; y < i + j; y++, z++)
 		p[y] = s2[z];
+
+	p[i + j] = '\0';
 
 	return (p);
 }
