@@ -9,8 +9,14 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j, k = 0;
-	char *p = malloc(sizeof(char) * ac + 1);
+	int i, j, k = 0, c = 0;
+	char *p;
+
+	for (i = 0; i < ac; i++)
+		for (j = 0; av[i][j] != '\0'; j++, k++)
+			;
+
+	p = malloc(sizeof(char) * k + 1);
 
 	if (p == NULL)
 		return (NULL);
@@ -26,15 +32,15 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++, k++)
+		for (j = 0; av[i][j] != '\0'; j++, c++)
 		{
-			*(p + k) = av[i][j];
+			*(p + c) = av[i][j];
 		}
-		*(p + k) = '\n';
-		k++;
+		*(p + c) = '\n';
+		c++;
 	}
 
-	*(p + k) = '\0';
+	*(p + c) = '\0';
 
 	return (p);
 }
