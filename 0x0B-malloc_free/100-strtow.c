@@ -17,7 +17,7 @@ char **strtow(char *str)
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ' && str[i + 1] != ' ')
-			c++:
+			c++;
 	}
 
 	a = malloc(sizeof(char *) + c);
