@@ -16,7 +16,7 @@ char **strtow(char *str)
 	for (i = 0, c1 = 0; str[i] != '\0'; i++)
 		if (str[i] == ' ' && str[i + 1] != '\0' && str[i + 1] != ' ')
 			c1++;
-	a = (char **)malloc(sizeof(char *) * c1);
+	a = (char **)malloc(sizeof(char *) * c1 + 1);
 	if (a == NULL)
 		return (NULL);
 	for (i = 0, j = 0; str[i] != '\0'; i++)
@@ -25,7 +25,7 @@ char **strtow(char *str)
 			c2++;
 			if (str[i + 1] == ' ' || str[i + 1] == '\0')
 			{
-				a[j] = (char *)malloc(sizeof(char *) * c2 + 1), c2 = 0;
+				a[j] = (char *)malloc(sizeof(char *) * c2 + 2), c2 = 0;
 
 				if (a[j] == NULL)
 				{
