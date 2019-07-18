@@ -8,7 +8,7 @@
  */
 char **strtow(char *str)
 {
-	int i, j, k, c1, c2;
+	unsigned int i, j, k, c1, c2;
 	char **a;
 
 	if (str == NULL || *str == '\0')
@@ -29,7 +29,7 @@ char **strtow(char *str)
 
 				if (a[j] == NULL)
 				{
-					for (k = j; j >= 0; j--)
+					for (k = j;; j--)
 						free(a[j]);
 					free(a);
 					return (NULL);
