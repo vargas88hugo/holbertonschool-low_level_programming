@@ -6,22 +6,26 @@
  * @array: Array to be checked
  * @size: Size of the array
  * @cmp: Check function
+ * Return: the index of the first element if is true or -1 otherwise
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i, j;
 
-	for (i = 0, j = 0; i < size; i++)
+	if (array != NULL || cmp != NULL)
 	{
-		if (cmp(array[i]))
+		for (i = 0, j = 0; i < size; i++)
 		{
-		    j = i;
-		    break;
+			if (cmp(array[i]))
+			{
+				j = i;
+				break;
+			}
 		}
-	}
 
-	if (j == 0 || size <= 0)
-		return (-1);
+		if (j == 0 || size <= 0)
+			return (-1);
+	}
 
 	return (j);
 }
