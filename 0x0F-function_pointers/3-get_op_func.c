@@ -4,8 +4,6 @@
 /**
  * get_op_func - Function that select the correct function of the operation
  * @s: String of the operator
- * @a: First Number
- * @b: Second Number
  * Return: The result of the operation
  */
 int (*get_op_func(char *s))(int, int)
@@ -25,9 +23,9 @@ int (*get_op_func(char *s))(int, int)
 	while (ops[i].op != NULL)
 	{
 		if (ops[i].op[0] == s[0])
-		        break;
+			return (ops[i].f);
 		i++;
 	}
 
-	return (ops[i].f);
+	return (NULL);
 }

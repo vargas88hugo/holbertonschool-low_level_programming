@@ -10,19 +10,25 @@
  */
 int main(int argc, char **argv)
 {
-	if (argc == 4)
-	{
-		if(func = get_op_func(argv[2]))
-			if(*get_op_func(argv[2])(argv[1], argv[3]))
-		{
-			if func != NULL
-					   func(argv[1], argv[3])
-		}
-	}
-	else
+	if (argc != 4)
 	{
 		printf("Error\n");
+		exit(98);
 	}
+
+	if (get_op_func(argv[2]) == NULL || argv[2][1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	if ((argv[2][0] == '%' || argv[2][0] == '/') && argv[3][0] == '0')
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	printf("%d\n", get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3])));
 
 	return (0);
 }
