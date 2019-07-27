@@ -71,7 +71,7 @@ void print_all(const char * const format, ...)
 		{'\0', NULL}
 	};
 	va_start(x, format);
-	while (format[i] != '\0')
+	while (format[i] != '\0' && formar != NULL)
 	{
 		j = 0;
 		while (arr[j].a != '\0')
