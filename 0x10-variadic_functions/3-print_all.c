@@ -40,7 +40,14 @@ void fnfloat(va_list x)
  */
 void fnstring(va_list x)
 {
-	printf("%s", va_arg(x, char *));
+	char *str;
+
+	str = va_arg(x, char *);
+
+	if (str == NULL)
+		str = "(nil)";
+
+	printf("%s", str);
 }
 
 /**
