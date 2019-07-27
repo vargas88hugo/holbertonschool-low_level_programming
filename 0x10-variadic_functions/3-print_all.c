@@ -43,13 +43,11 @@ void fnstring(va_list x)
 	char *str;
 
 	str = va_arg(x, char *);
-
 	if (str == NULL)
 	{
-	        printf("(nil)");
+		printf("(nil)");
 		return;
 	}
-
 	printf("%s", str);
 }
 
@@ -61,13 +59,10 @@ void fnstring(va_list x)
 void print_all(const char * const format, ...)
 {
 	unsigned int i = 0, j;
-
 	char *p;
 
 	p = "";
-
 	va_list x;
-
 	fr arr[] = {
 		{'c', fnchar},
 		{'i', fnint},
@@ -75,9 +70,7 @@ void print_all(const char * const format, ...)
 		{'s', fnstring},
 		{'\0', NULL}
 	};
-
 	va_start(x, format);
-
 	while (format[i] != '\0')
 	{
 		j = 0;
@@ -86,16 +79,13 @@ void print_all(const char * const format, ...)
 			if (format[i] == arr[j].a)
 			{
 				printf("%s", p);
-
 				arr[j].f(x);
 				p = ", ";
 			}
-
 			j++;
 		}
 		i++;
 	}
 	printf("\n");
-
 	va_end(x);
 }
