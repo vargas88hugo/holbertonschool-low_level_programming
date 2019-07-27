@@ -15,7 +15,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	const char *str;
 
 	if (n < 1)
+	{
 		printf("\n");
+		return;
+	}
 
 	va_list x;
 
