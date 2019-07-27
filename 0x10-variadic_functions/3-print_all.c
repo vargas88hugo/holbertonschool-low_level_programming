@@ -32,6 +32,7 @@ void print_all(const char * const format, ...)
 				printf("%s", p);
 				arr[j].f(x);
 				p = ", ";
+				break;
 			}
 			j++;
 		}
