@@ -57,7 +57,11 @@ void fnstring(va_list x)
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int i = 0, j, k;
+	unsigned int i = 0, j;
+
+	char *p;
+
+	p = "";
 
 	va_list x;
 
@@ -73,23 +77,20 @@ void print_all(const char * const format, ...)
 
 	while (format[i] != '\0')
 	{
-		j = 0, k = 0;
+		j = 0;
 		while (arr[j].a != '\0')
 		{
 			if (format[i] == arr[j].a)
 			{
+				printf("%s", p);
+
 				arr[j].f(x);
-				k = 1;
+				p = ", ";
 			}
 
 			j++;
 		}
 		i++;
-
-		if (format[i] != '\0' && k == 1)
-		{
-			printf(", ");
-		}
 	}
 	printf("\n");
 
