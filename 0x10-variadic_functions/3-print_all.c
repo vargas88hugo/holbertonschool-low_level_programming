@@ -48,7 +48,7 @@ void print_all(const char * const format, ...)
  * @x: valist
  * Return: void
  */
-void fnchar(Va_list x)
+void fnchar(va_list x)
 {
 	printf("%c", (char) va_arg(x, int));
 }
