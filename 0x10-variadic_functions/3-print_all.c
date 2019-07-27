@@ -4,13 +4,52 @@
 #include "variadic_functions.h"
 
 /**
+ * print_all - prints all arguments passed to it
+ * @format: list of argument types
+ * Return: void
+ */
+void print_all(const char * const format, ...)
+{
+	va_list x;
+	char *p = "";
+	int j, i = 0;
+	fr arr[] = {
+		{"c", fnchar},
+		{"i", fnint},
+		{"f", fnfloat},
+		{"s", fnstring},
+		{NULL, NULL}
+	};
+
+	va_start(x, format);
+	while (format && format[i])
+	{
+		j = 0;
+		while (arr[j].a != NULL)
+		{
+			if (format[i] == arr[j].a[0])
+			{
+				printf("%s", p);
+				arr[j].f(x);
+				p = ", ";
+			}
+			j++;
+		}
+		i++;
+	}
+	printf("\n");
+	va_end(x);
+}
+
+
+/**
  * fnchar - Function that print with the char cast
  * @x: valist
  * Return: void
  */
-void fnchar(va_list x)
+void fnchar(Va_list x)
 {
-	printf("%c", va_arg(x, int));
+	printf("%c", (char) va_arg(x, int));
 }
 
 /**
@@ -30,7 +69,7 @@ void fnint(va_list x)
  */
 void fnfloat(va_list x)
 {
-	printf("%f", va_arg(x, double));
+	printf("%f", (float)va_arg(x, double));
 }
 
 /**
@@ -40,52 +79,12 @@ void fnfloat(va_list x)
  */
 void fnstring(va_list x)
 {
-	char *str;
+	char *p = va_arg(x, char *);
 
-	str = va_arg(x, char *);
-	if (str == NULL)
+	if (p == NULL)
 	{
 		printf("(nil)");
 		return;
 	}
-	printf("%s", str);
-}
-
-/**
- * print_all - Function that prints anything
- * @format: format of data type
- * Return: void
- */
-void print_all(const char * const format, ...)
-{
-	unsigned int i = 0, j;
-	char *p;
-
-	p = "";
-	va_list x;
-	fr arr[] = {
-		{'c', fnchar},
-		{'i', fnint},
-		{'f', fnfloat},
-		{'s', fnstring},
-		{'\0', NULL}
-	};
-	va_start(x, format);
-	while (format[i] != '\0' && format != NULL)
-	{
-		j = 0;
-		while (arr[j].a != '\0')
-		{
-			if (format[i] == arr[j].a)
-			{
-				printf("%s", p);
-				arr[j].f(x);
-				p = ", ";
-			}
-			j++;
-		}
-		i++;
-	}
-	printf("\n");
-	va_end(x);
+	printf("%s", p);
 }

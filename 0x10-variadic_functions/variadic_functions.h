@@ -4,7 +4,7 @@
 
 typedef struct form
 {
-	char a;
+	char *a;
 	void (*f)(va_list);
 } fr;
 
