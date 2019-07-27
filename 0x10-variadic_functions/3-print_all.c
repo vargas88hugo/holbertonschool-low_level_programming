@@ -40,14 +40,14 @@ void fnfloat(va_list x)
  */
 void fnstring(va_list x)
 {
-	/*char *str;
+	char *str;
 
 	str = va_arg(x, char *);
 	if (str == NULL)
 	{
 		printf("(nil)");
 		return;
-		}*/
+	}
 	printf("%s", str);
 }
 
@@ -71,7 +71,7 @@ void print_all(const char * const format, ...)
 		{'\0', NULL}
 	};
 	va_start(x, format);
-	while (format[i] != '\0' && formar != NULL)
+	while (format[i] != '\0' && format != NULL)
 	{
 		j = 0;
 		while (arr[j].a != '\0')
