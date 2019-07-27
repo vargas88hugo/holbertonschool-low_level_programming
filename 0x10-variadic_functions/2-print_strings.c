@@ -14,13 +14,13 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	const char *str;
 
+	va_list x;
+
 	if (n < 1)
 	{
 		printf("\n");
 		return;
 	}
-
-	va_list x;
 
 	va_start(x, n);
 
