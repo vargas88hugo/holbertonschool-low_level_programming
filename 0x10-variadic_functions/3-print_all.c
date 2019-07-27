@@ -45,7 +45,10 @@ void fnstring(va_list x)
 	str = va_arg(x, char *);
 
 	if (str == NULL)
-		str = "(nil)";
+	{
+	        printf("(nil)");
+		return;
+	}
 
 	printf("%s", str);
 }
