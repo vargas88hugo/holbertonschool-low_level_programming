@@ -12,9 +12,6 @@ unsigned int binary_to_uint(const char *b)
 	for (k = 0; b[k] != '\0'; k++)
 		;
 
-	if (k > 32)
-		return (0);
-
 	for (i = k - 1; i >= 0; i--, j *= 2)
 	{
 		if (b[i] < 48 || b[i] > 57)
