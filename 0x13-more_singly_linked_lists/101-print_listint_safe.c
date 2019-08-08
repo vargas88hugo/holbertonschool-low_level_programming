@@ -39,9 +39,9 @@ size_t print_listint_safe(const listint_t *head)
 	}
 	while (head)
 	{
+		(head == NULL) ? exit(98) : head;
 		printf("[%p] %d\n", &(head->n), head->n);
-		head = head->next;
-		i++;
+		head = head->next, i++;
 	}
 	(bool == 1) ? printf("-> [%p] %d\n", &(temp->n), temp->n) : bool;
 	return (i);
