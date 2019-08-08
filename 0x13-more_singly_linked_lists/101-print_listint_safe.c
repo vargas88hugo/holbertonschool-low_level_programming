@@ -46,5 +46,6 @@ size_t print_listint_safe(const listint_t *head)
 		head = head->next, i++;
 	}
 	(bool == 1) ? printf("-> [%p] %d\n", (void *)temp, temp->n) : (int)bool;
+	(bool == 1) ? (void)exit(98) : (void)bool;
 	return (i);
 }
