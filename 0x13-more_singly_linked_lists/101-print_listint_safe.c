@@ -41,10 +41,10 @@ size_t print_listint_safe(const listint_t *head)
 	}
 	while (head)
 	{
-		(head == NULL) ? exit(98) : head;
-		printf("[%p] %d\n", head, head->n);
+		(head == NULL) ? (void)exit(98) : (void)head;
+		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next, i++;
 	}
-	(bool == 1) ? printf("-> [%p] %d\n", &(temp->n), temp->n) : bool;
+	(bool == 1) ? printf("-> [%p] %d\n", (void *)temp, temp->n) : (int)bool;
 	return (i);
 }
