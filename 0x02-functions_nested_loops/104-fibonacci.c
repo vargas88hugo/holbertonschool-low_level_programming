@@ -9,7 +9,7 @@ int main(void)
 {
 	unsigned long int i, a = 1, b = 2, c, c1, a1, b1;
 
-	for (i = 1; i < 97; i++)
+	for (i = 1; i <= 98; i++)
 	{
 		if (i < 93)
 		{
@@ -40,7 +40,7 @@ int main(void)
 			}
 			printf("%lu%lu", c, c1);
 		}
-		if (i < 96)
+		if (i < 98)
 			printf(", ");
 	}
 	putchar(10);
