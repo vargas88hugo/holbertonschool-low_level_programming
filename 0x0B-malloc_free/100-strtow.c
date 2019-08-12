@@ -8,44 +8,42 @@
  */
 char **strtow(char *str)
 {
-	unsigned int i, j, k, c1, c2;
+	int i, j, k, m;
 	char **a;
 
-	if (str == NULL || *str == '\0')
+	for (i = 0, j = 0; str[i]; i++)
+		if (str[i] == ' ' && str[i + 1] >= 33 && str[i + 1] <= 126)
+			j++;
+
+	if (str == NULL || j == 0)
 		return (NULL);
-	for (i = 0, c1 = 0; str[i] != '\0'; i++)
-		if (str[i] == ' ' && str[i + 1] != '\0' && str[i + 1] != ' ')
-			c1++;
-	a = (char **)malloc(sizeof(char *) * c1 + 1);
+
+	a = malloc(sizeof(char *) * (j + 1));
 	if (a == NULL)
 		return (NULL);
-	for (i = 0, j = 0; str[i] != '\0'; i++)
-		if (str[i] >= 33 && str[i] <= 126)
-		{
-			c2++;
-			if (str[i + 1] == ' ' || str[i + 1] == '\0')
-			{
-				a[j] = (char *)malloc(sizeof(char *) * c2 + 2), c2 = 0;
 
-				if (a[j] == NULL)
-				{
-					for (k = j;; j--)
-						free(a[j]);
-					free(a);
-					return (NULL);
-				}
-				j++;
-			}
-		}
-	for (i = 0, j = 0, k = 0; str[i] != '\0'; i++)
+	for (i = 0, j = 0; str[i] != '\0'; i++)
+	{
 		if (str[i] >= 33 && str[i] <= 126)
 		{
-			a[j][k] = str[i], k++;
-			if (str[i + 1] == ' ' || str[i + 1] == '\0')
-			{
-				a[j][k] = '\0', j++, k = 0;
-			}
+			for (m = i; str[m] != '\0' && str[m] != ' '; m++)
+				;
+
+			a[j] = malloc(sizeof(char) * (m + 1));
+			if (a[j] == NULL)
+				return (NULL);
+
+			for (m = i, k = 0; str[m] != '\0' && str[m] != ' '; m++, k++)
+				a[j][k] = str[m];
+
+			a[j][k] = '\0';
+
+			i = m;
+			j++;
 		}
+	}
+
 	a[j] = NULL;
+
 	return (a);
 }
