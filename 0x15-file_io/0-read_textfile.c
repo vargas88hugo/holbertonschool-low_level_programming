@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * ssize_t read_textfile - Function that reads a text file and prints
+ * read_textfile - Function that reads a text file and prints
  * @filename: Name of the file
  * @letters: Number of letters to be read and print
  * Return: The number of letter or if it fails 0
@@ -31,8 +31,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	/* write */
 
 	write(STDIN_FILENO, buff, bt);
-
-	free(buff);
 
 	return (bt);
 }
