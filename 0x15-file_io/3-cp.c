@@ -9,7 +9,7 @@
  */
 int main(int argc, char **argv)
 {
-	int fd1, fd2, bt;
+	int fd1, fd2, bt = 1;
 	char buff[BUFFER];
 
 	if (argc != 3)
@@ -26,8 +26,9 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	while ((bt = read(fd1, buff, BUFFER)) > 0)
+	while (bt => 0)
 	{
+		bt = read(fd1, buff, BUFFER);
 		if (bt == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -47,6 +48,5 @@ int main(int argc, char **argv)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2), exit(100);
 	}
-
 	return (0);
 }
