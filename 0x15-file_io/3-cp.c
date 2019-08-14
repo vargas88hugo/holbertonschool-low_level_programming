@@ -9,7 +9,7 @@
  */
 int main(int argc, char **argv)
 {
-	int fd1, fd2, bt = 1;
+	int fd1, fd2, bt = BUFFER;
 	char buff[BUFFER];
 
 	if (argc != 3)
