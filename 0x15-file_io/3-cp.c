@@ -9,7 +9,7 @@
  */
 int main(int argc, char **argv)
 {
-	int fd1, fd2, bt1 = BUFFER, bt2;
+	int fd1, fd2, bt1 = BUFFER, bt2, cl1, cl2;
 	char buff[BUFFER];
 
 	if (argc != 3)
@@ -38,13 +38,10 @@ int main(int argc, char **argv)
 			exit(99);
 		}
 	}
-	if (close(fd1) < 0)
-	{
+	cl1 = close(fd1), cl2 = close(fd2);
+	if (cl1 < 0)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1), exit(100);
-	}
-	if (close(fd2) < 0)
-	{
+	if (cl2 < 0)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2), exit(100);
-	}
 	return (0);
 }
