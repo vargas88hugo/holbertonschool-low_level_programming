@@ -29,8 +29,7 @@ int main(int argc, char **argv)
 	fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
 	if (fd == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]), exit(99);
-	while (bt != 0)
-		write(fd, buff, bt);
+	write(fd, buff, bt);
 	cl = close(fd);
 	if (cl == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", bt), exit(99);
