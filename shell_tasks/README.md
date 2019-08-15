@@ -1,0 +1,1 @@
+This repository is about the shell tasks. It is a trainning for the big project
