@@ -16,6 +16,8 @@ int main(void)
 		{
 			execve(args[0], args, new);
 		}
+		printf("%d\n", getpid());
+		printf("%d\n", getppid());
 		wait(&status);
 	}
 }
