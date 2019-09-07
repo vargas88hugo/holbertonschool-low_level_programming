@@ -11,7 +11,7 @@ size_t print_listint_safe(const listint_t *head)
 	listint_t *slow, *fast, *temp;
 
 	if (head == NULL)
-		exit(98);
+		printf("0\n"), exit(98);
 	slow = (listint_t *)head, fast = (listint_t *)head;
 	while (slow && fast && fast->next)
 	{
@@ -31,8 +31,7 @@ size_t print_listint_safe(const listint_t *head)
 			fast = fast->next;
 		while (1)
 		{
-			fast = fast->next;
-			slow = slow->next;
+			fast = fast->next, slow = slow->next;
 			if (fast->next == slow->next)
 			{
 				temp = slow->next, fast->next = NULL;
