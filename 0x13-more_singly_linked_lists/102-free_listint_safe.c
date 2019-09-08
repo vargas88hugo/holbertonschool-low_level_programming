@@ -60,7 +60,7 @@ size_t free_listint_safe(listint_t **h)
 	int n;
 
 	if (h == NULL || *h == NULL)
-		printf("0\n"), exit(98);
+		printf("0\n(nil)\n"), exit(98);
 
 	n = detect_loop(*h);
 
