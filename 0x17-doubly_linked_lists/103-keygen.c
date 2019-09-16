@@ -3,39 +3,6 @@
 #include <string.h>
 
 /**
- * f1 - crackme
- * @i: first variable
- * Return: char
- */
-int f1(int i)
-{
-	return ((i ^ 59) & 63);
-
-}
-
-/**
- * f2 - crackme
- * @i: first variable
- * @j: second variable
- * Return: char
- */
-int f2(char *i, int j)
-{
-	int a;
-	int b;
-
-	a = 0;
-	b = 0;
-	while (b < j)
-	{
-		a = a + i[b];
-		b = b + 1;
-	}
-	return ((a ^ 0x4f) & 0x3f);
-}
-
-
-/**
  * f3 - crackme
  * @i: first variable
  * @j: second variable
@@ -129,7 +96,7 @@ int f6(char i)
  */
 int main(int argc, char **argv)
 {
-	int a;
+	int a, b, c;
 	char *s;
 	long int arr[] = {
 		0x3877445248432d41,
@@ -147,8 +114,15 @@ int main(int argc, char **argv)
 
 	s = argv[1];
 	a = strlen(s);
-	putchar(((char *)arr)[f1(a)]);
-	putchar(((char *)arr)[f2(s, a)]);
+	putchar(((char *)arr)[(a ^ 59) & 63]);
+	c = 0;
+	b = 0;
+	while (b < a)
+	{
+		c = c + s[b];
+		b = b + 1;
+	}
+	putchar(((char *)arr)[(c ^ 0x4f) & 0x3f]);
 	putchar(((char *)arr)[f3(s, a)]);
 	putchar(((char *)arr)[f4(s, a)]);
 	putchar(((char *)arr)[f5(s, a)]);
