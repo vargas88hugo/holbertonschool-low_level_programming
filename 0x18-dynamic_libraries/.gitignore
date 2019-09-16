@@ -2,3 +2,5 @@
 [[:alpha:]]
 *.c
 *.o
+*.py
+python.h
