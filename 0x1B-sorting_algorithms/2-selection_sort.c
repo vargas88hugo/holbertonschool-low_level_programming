@@ -24,13 +24,13 @@ void selection_sort(int *array, size_t size)
 {
 	size_t i, j, k;
 
-	if (size < 2 || array == NULL)
+	if (size < 2)
 		return;
 
 	for (i = 0; i < size - 1; i++)
 	{
 		k = i;
-		for (j = i; j < size; j++)
+		for (j = i + 1; j < size; j++)
 		{
 			if (array[j] < array[k])
 				k = j;
