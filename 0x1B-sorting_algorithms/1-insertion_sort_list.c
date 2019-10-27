@@ -1,5 +1,29 @@
 #include "sort.h"
 
+
+/**
+ * swap_list - function that swaps two nodes
+ * @n1: node one
+ * @n2: node two
+ */
+void swap_list(listint_t **n1, listint_t **n2)
+{
+	listint_t *prev = NULL, *next = NULL;
+
+	prev = (*n1)->prev;
+	next = (*n1);
+
+	(*n1)->prev = (*n2);
+	(*n1)->next = (*n2)->next;
+	(*n2)->prev = prev;
+	(*n2)->next = next;
+
+	if ((*n2)->prev)
+		(*n2)->prev->next = (*n2);
+	if ((*n1)->next)
+		(*n1)->next->prev = (*n1);
+}
+
 /**
  * insertion_sort_list - Insertion Sort Algorithm for a double linked list
  * @list: Double linked list
@@ -29,27 +53,4 @@ void insertion_sort_list(listint_t **list)
 			temp2 = temp3->prev;
 		}
 	}
-}
-
-/**
- * swap_list - function that swaps two nodes
- * @n1: node one
- * @n2: node two
- */
-void swap_list(listint_t **n1, listint_t **n2)
-{
-	listint_t *prev = NULL, *next = NULL;
-
-	prev = (*n1)->prev;
-	next = (*n1);
-
-	(*n1)->prev = (*n2);
-	(*n1)->next = (*n2)->next;
-	(*n2)->prev = prev;
-	(*n2)->next = next;
-
-	if ((*n2)->prev)
-		(*n2)->prev->next = (*n2);
-	if ((*n1)->next)
-		(*n1)->next->prev = (*n1);
 }
