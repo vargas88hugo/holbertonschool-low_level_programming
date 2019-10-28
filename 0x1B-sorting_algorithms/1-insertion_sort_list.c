@@ -51,6 +51,7 @@ void insertion_sort_list(listint_t **list)
 				(*list) = temp3;
 			print_list(*list);
 			temp2 = temp3->prev;
+			flag = 1;
 		}
 	}
 }
