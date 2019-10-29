@@ -1,5 +1,7 @@
 #include "sort.h"
 
+static int flag;
+
 /**
  * list_len - function tha calculates the length of the list
  * @list: list to be checked
@@ -67,6 +69,7 @@ void bubble_tail(listint_t **t1, listint_t **t2, listint_t **l, int s, int i)
 				tail = *t1;
 			print_list((listint_t *)(*l));
 			*t2 = (*t1)->next;
+			flag = 1;
 		}
 		else
 		{
@@ -124,7 +127,12 @@ void cocktail_sort_list(listint_t **list)
 	size = list_len(*list);
 	for (i = 0; i < size - 1; i++)
 	{
+		flag = 0;
+
 		bubble_tail(&temp1, &temp2, list, size, i);
+
+		if (flag == 0)
+			return;
 
 		bubble_head(&temp1, &temp2, list, size, i);
 	}
