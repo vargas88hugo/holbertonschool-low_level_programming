@@ -27,7 +27,14 @@ int create_array(int *array, int **ptr, int size)
 	return (k);
 }
 
-void cpy_free_array(int **array, int **ptr1, int **ptr2, int size)
+/**
+ * cpy_free_all - function that copies original array and free de extra space
+ * @array: original array
+ * @ptr1: extra array
+ * @ptr2: extra array
+ * @size: size of the original array
+ */
+void cpy_free_all(int **array, int **ptr1, int **ptr2, int size)
 {
 	int i;
 
@@ -82,5 +89,5 @@ void counting_sort(int *array, size_t size)
 			ptr1[array[i]] -= 1;
 		}
 	}
-	cpy_free_array(&array, &ptr1, &ptr2, size);
+	cpy_free_all(&array, &ptr1, &ptr2, size);
 }
