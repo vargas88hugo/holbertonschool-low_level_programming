@@ -77,8 +77,9 @@ void bubble_tail(listint_t **t1, listint_t **t2, listint_t **l, int s, int i)
 			*t2 = (*t1)->next;
 		}
 	}
-	*t1 = tail;
-	*t2 = (*t1)->prev;
+	if (flag == 0)
+	        return;
+	*t1 = tail, *t2 = (*t1)->prev;
 }
 
 /**
