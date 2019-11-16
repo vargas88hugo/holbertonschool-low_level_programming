@@ -3,3 +3,5 @@
 *.o
 holberton
 main
+__pycache__
+5-main.py
